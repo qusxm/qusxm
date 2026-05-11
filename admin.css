@@ -1,0 +1,380 @@
+/* ========================================
+    АДМИН-ПАНЕЛЬ
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: url('https://images.wallpaperscraft.ru/image/single/listia_zelenyj_temnyj_145996_3840x2400.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.admin-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    padding: 40px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: #245b45;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.header h2 {
+    color: #245b45;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.nav {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-btn {
+    background: #245b45;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.nav-btn:hover {
+    background: #1a3b2e;
+    text-decoration: none;
+}
+
+.stat-numbers {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0 30px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: #245b45;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 130px;
+}
+
+.stat-item span {
+    font-size: 28px;
+    font-weight: bold;
+    display: block;
+}
+
+h2 {
+    color: #245b45;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #245b45;
+    margin: 25px 0 15px;
+}
+
+h4 {
+    color: #245b45;
+    margin-bottom: 5px;
+}
+
+.scenario-card {
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid #245b45;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.scenario-card p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.scenario-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.form-add {
+    background: #e8f5e9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.form-add input,
+.form-add textarea {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.form-add input:focus,
+.form-add textarea:focus {
+    outline: none;
+    border-color: #245b45;
+}
+
+.form-add textarea {
+    resize: vertical;
+    min-height: 40px;
+}
+
+.form-add button {
+    width: auto;
+    padding: 12px 24px;
+    background: #245b45;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.form-add button:hover {
+    background: #1a3b2e;
+}
+
+/* Единый стиль для всех кнопок действий */
+.btn-green,
+.btn-red,
+.btn-sm,
+button[type="submit"] {
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1.4;
+    transition: background 0.3s;
+}
+
+.btn-green {
+    background: #245b45;
+    color: white;
+}
+
+.btn-green:hover {
+    background: #1a3b2e;
+    text-decoration: none;
+}
+
+.btn-red {
+    background: #c62828;
+    color: white;
+}
+
+.btn-red:hover {
+    background: #b71c1c;
+}
+
+.user-line {
+    background: #f5f5f5;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.user-line strong {
+    color: #245b45;
+}
+
+.user-line small {
+    color: #888;
+    font-size: 13px;
+}
+
+.badge {
+    background: #e8f5e9;
+    color: #245b45;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+.badge-admin {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+.result-line {
+    background: #f5f5f5;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.result-line strong {
+    color: #245b45;
+}
+
+.result-line small {
+    color: #888;
+    font-size: 13px;
+}
+
+.message-success {
+    background: #e8f5e9;
+    color: #245b45;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+a {
+    color: #245b45;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Страница вопросов */
+.question-card {
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid #245b45;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #245b45;
+    font-size: 16px;
+}
+
+.answer-row {
+    background: #fff;
+    padding: 10px 15px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.answer-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.form-add-answer {
+    background: #e8f5e9;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.form-add-answer input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.form-add-answer input[type="text"]:focus {
+    outline: none;
+    border-color: #245b45;
+}
+
+.form-add-answer input[type="number"] {
+    width: 80px;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.form-add-answer input[type="number"]:focus {
+    outline: none;
+    border-color: #245b45;
+}
+
+.empty-text {
+    text-align: center;
+    color: #888;
+    margin: 20px 0;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+.result-date {
+    color: #aaa;
+    font-size: 11px;
+}

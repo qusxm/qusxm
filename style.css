@@ -1,0 +1,503 @@
+/* ========================================
+    ГЛОБАЛЬНЫЕ СТИЛИ (для всех страниц)
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: url('https://images.wallpaperscraft.ru/image/single/listia_zelenyj_temnyj_145996_3840x2400.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* ========================================
+    ОСНОВНОЙ КОНТЕЙНЕР (для всех страниц)
+   ======================================== */
+
+.container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Для страниц с широким контентом (админка, личный кабинет) */
+.container-wide {
+    max-width: 850px;
+}
+
+/* ========================================
+    ЗАГОЛОВКИ (все страницы)
+   ======================================== */
+
+h1 {
+    color: #245b45;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+h2 {
+    color: #245b45;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #245b45;
+    margin-bottom: 10px;
+}
+
+/* ========================================
+    ФОРМЫ (регистрация, авторизация, админка)
+   ======================================== */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: -5px;
+}
+
+input, textarea, select {
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #245b45;
+}
+
+textarea {
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* Чекбокс (страница регистрации) */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-weight: normal;
+}
+
+.checkbox-group input {
+    width: auto;
+}
+
+/* Сообщение о пароле (страница регистрации) */
+#message {
+    font-size: 12px;
+    margin-top: -5px;
+}
+
+/* ========================================
+    СООБЩЕНИЯ (ошибки, успех)
+   ======================================== */
+
+.message {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.message.error {
+    background: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+.message.success {
+    background: #e8f5e9;
+    color: #245b45;
+    border: 1px solid #a5d6a7;
+}
+
+/* ========================================
+    ССЫЛКИ (все страницы)
+   ======================================== */
+
+a {
+    color: #1a362b;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Подвал формы (регистрация, авторизация) */
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* ========================================
+    НАВИГАЦИЯ (главная, личный кабинет, админка)
+   ======================================== */
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header p {
+    color: #666;
+    margin-top: 10px;
+}
+
+.nav {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-btn {
+    background: #245b45;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.nav-btn:hover {
+    background: #1a3b2e;
+    text-decoration: none;
+}
+
+/* ========================================
+    КНОПКИ (все страницы)
+   ======================================== */
+
+button {
+    width: 200px;
+    height: 50px;
+    color: #ffffff;
+    background-color: #224c3b;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1a3b2e;
+}
+
+.btn-submit-wrapper {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Маленькие кнопки (для админки) */
+.btn-small {
+    padding: 5px 10px;
+    font-size: 12px;
+    width: auto;
+    height: auto;
+}
+
+/* Кнопка удаления (админка) */
+.delete-btn {
+    background: #c62828;
+}
+
+.delete-btn:hover {
+    background: #b71c1c;
+}
+
+/* ========================================
+    СЕТКА СЦЕНАРИЕВ (главная, страница сценариев)
+   ======================================== */
+
+.scenarios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.scenario-card {
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 4px solid #245b45;
+}
+
+.scenario-card h3 {
+    color: #245b45;
+    margin-bottom: 10px;
+}
+
+.start-btn {
+    display: inline-block;
+    margin-top: 15px;
+    background: #245b45;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.start-btn:hover {
+    background: #1a3b2e;
+    text-decoration: none;
+}
+
+/* ========================================
+    ОПРОСЫ (batteryPage, paketPage, coffeePage)
+   ======================================== */
+
+.answer-item {
+    margin: 10px 0;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.answer-item label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.answer-item input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+/* ========================================
+    ЛИЧНЫЙ КАБИНЕТ (user.php)
+   ======================================== */
+
+.profile-content {
+    margin-top: 10px;
+}
+
+.profile-content h2 {
+    color: #245b45;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.empty-state {
+    background: #e8f5e9;
+    border: 1px solid #a5d6a7;
+    border-radius: 10px;
+    padding: 25px 20px;
+    text-align: center;
+    color: #245b45;
+    font-size: 15px;
+}
+
+.empty-state a {
+    color: #245b45;
+    font-weight: 600;
+}
+
+.results-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.result-card {
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 4px solid #245b45;
+}
+
+.result-card h3 {
+    color: #245b45;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.meta {
+    color: #555;
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.meta span {
+    font-weight: 600;
+    color: #333;
+}
+
+.meta.score {
+    background: #e8f5e9;
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 6px;
+    margin-top: 8px;
+}
+
+.meta.score strong {
+    color: #245b45;
+    font-size: 16px;
+}
+
+.result-text {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #e0e0e0;
+    color: #444;
+    font-size: 14px;
+}
+
+.result-text span {
+    font-weight: 600;
+    color: #333;
+}
+
+.meta.date {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+/* ========================================
+    СТРАНИЦА СЦЕНАРИЕВ (scenarios.php)
+   ======================================== */
+
+.main {
+    margin-top: 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #245b45;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* ========================================
+    ГЛАВНАЯ СТРАНИЦА
+   ======================================== */
+
+.welcome-block {
+    text-align: center;
+    margin: 20px 0 30px;
+}
+
+.welcome-block p {
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.footer-note {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-note p {
+    color: #999;
+    font-size: 13px;
+}
+
+/* ========================================
+    РЕЗУЛЬТАТЫ ОПРОСОВ
+   ======================================== */
+
+.result-title {
+    color: #1b5e20;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.result-level {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.result-level.high {
+    color: #2e7d32;
+}
+
+.result-level.medium {
+    color: #e65100;
+}
+
+.result-level.low {
+    color: #c62828;
+}
+
+.result-label {
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.result-score-wrapper {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.result-score {
+    background: #e8f5e9;
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #245b45;
+}
+
+.result-actions {
+    margin-top: 20px;
+    text-align: center;
+}
